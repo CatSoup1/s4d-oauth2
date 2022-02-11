@@ -21,9 +21,7 @@
             </b-navbar-nav>
             <b-navbar-nav style="margin-top: auto; margin-bottom: auto;" class="ml-auto">
                     <b-button id="loggedInData" style="color: white; margin-right: 5px; margin-top: auto; margin-bottom: auto;"><img id="discordPfp" src=" " style=""/>Currently not logged in</b-button>
-                    <b-nav-item-dropdown style="margin-right: 10px; margin-top: auto; margin-bottom: auto;" id="logDp" :text="" right>
-        <b-dropdown-item @click="logOut()">Log Out</b-dropdown-item>
-      </b-nav-item-dropdown>
+                    <logOut id="logDP" style="display: none;"></logOut>
                 <b-button v-on:click="login()" id="loginButton" style="margin-right: 4px;border-radius: 0em; border-top-left-radius: 0.25em; border-bottom-left-radius: 0.25em" href="https://discord.com/api/oauth2/authorize?client_id=938552684942880869&redirect_uri=https%3A%2F%2Fs4d-xl83.netlify.app%2F&response_type=token&scope=identify">
                 <b-icon-discord></b-icon-discord>
                 </b-button>
@@ -50,9 +48,8 @@ import CodeModal from "./CodeModal.vue";
 import preBuilds from "./preBuilds.vue";
 import ToolboxModal from "./ToolboxModal.vue";
 import localforage from 'localforage';
-import r from "./requires";
-
-
+import logOut from './LogOut.vue'
+import r from "./requires"
 export default {
     name: "navbar",
     components: {
@@ -63,6 +60,7 @@ export default {
         CodeModal,
         TokenModal,
         preBuilds,
+        logOut,
         ToolboxModal
     },
     computed: {
@@ -115,7 +113,6 @@ export default {
                     const fileName = `${encodeURIComponent(document.querySelector("#docName").textContent).replace(/%20/g, " ")}.zip`;
                     zip.file("blocks.xml", xmlContent);
                     const javascriptContent = this.getWorkspaceCode();
-
                 const jsondb = await localStorage.getItem('easyjsondatabase')
                     zip.file("bot.js", javascriptContent);
                     zip.file(".replit", 'run = "npm start"\nentrypoint="bot.js"');
@@ -156,25 +153,9 @@ export default {
                 }
             });
         },
-        logOut() {
-            Swal.fire({
-  title: 'Are you sure?',
-  icon: 'warning',
-  showCancelButton: true,
-  confirmButtonColor: '#3085d6',
-  cancelButtonColor: '#d33',
-  confirmButtonText: 'Yes'
-}).then(result => {
-  if (result.isConfirmed) {
-    document.getElementById("loginButton").style.display = ""
-                document.getElementById("logDP").style.display = "none"
-                localStorage.removeItem("avatarHash")
-                localStorage.removeItem("id") 
-                localStorage.removeItem("usernameTag")
-                document.getElementById("loggedInData").innerHTML = 'Currently not logged in'
-  }
-})
+        login() {
+            console.log("yo")
     }
-},
+    },
 }
 </script>
