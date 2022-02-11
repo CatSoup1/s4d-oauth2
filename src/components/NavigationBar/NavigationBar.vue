@@ -158,6 +158,22 @@ export default {
             });
         },
         logOut() {
+            Swal.fire({
+  title: 'Are you sure?',
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Yes'
+}).then((result) => {
+  if (result.isConfirmed) {
+    document.getElementById("loginButton").style.display = ""
+                document.getElementById("logDP").style.display = "none"
+                localStorage.removeItem("avatarHash")
+                localStorage.removeItem("id") 
+                localStorage.removeItem("usernameTag")
+                document.getElementById("loggedInData").innerHTML = 'Currently not logged in'
+})
     }
     },
 }
