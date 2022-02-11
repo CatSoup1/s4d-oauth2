@@ -175,6 +175,6 @@ export default {
                 document.getElementById("loggedInData").innerHTML = 'Currently not logged in'
 })
     }
-    },
+    }
 }
 </script>
