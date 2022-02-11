@@ -21,7 +21,7 @@
             </b-navbar-nav>
             <b-navbar-nav style="margin-top: auto; margin-bottom: auto;" class="ml-auto">
                     <b-button id="loggedInData" style="color: white; margin-right: 5px; margin-top: auto; margin-bottom: auto;"><img id="discordPfp" src=" " style=""/>Currently not logged in</b-button>
-                    <b-nav-item-dropdown id="logDP" style="display: none; margin-right: 10px; margin-top: auto; margin-bottom: auto;" id="v-step-0" :text="test" right>
+                    <b-nav-item-dropdown id="logDP" style="display: none; margin-right: 10px; margin-top: auto; margin-bottom: auto;" :text="" right>
         <b-dropdown-item @click="logOut()">Log Out</b-dropdown-item>
       
       </b-nav-item-dropdown>
