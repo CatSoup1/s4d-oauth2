@@ -22,7 +22,7 @@
             <b-navbar-nav style="margin-top: auto; margin-bottom: auto;" class="ml-auto">
                     <b-button id="loggedInData" style="color: white; margin-right: 5px; margin-top: auto; margin-bottom: auto;"><img id="discordPfp" src=" " style=""/>Currently not logged in</b-button>
                     <b-nav-item-dropdown id="logDP" style="display: none; margin-right: 10px; margin-top: auto; margin-bottom: auto;" :text="" right>
-        <b-dropdown-item @click="logOut()">Log Out</b-dropdown-item>
+        <b-dropdown-item>Log Out</b-dropdown-item>
       
       </b-nav-item-dropdown>
                 <b-button v-on:click="login()" id="loginButton" style="margin-right: 4px;border-radius: 0em; border-top-left-radius: 0.25em; border-bottom-left-radius: 0.25em" href="https://discord.com/api/oauth2/authorize?client_id=938552684942880869&redirect_uri=https%3A%2F%2Fs4d-xl83.netlify.app%2F&response_type=token&scope=identify">
@@ -154,9 +154,6 @@ export default {
                 }
             });
         },
-        login() {
-            console.log("yo")
-    }
     },
 }
 </script>
