@@ -1,4 +1,3 @@
-
 <template>
     <b-navbar toggleable="lg" type="dark" style="background-color:#161719;user-select:none; margin-top: auto; margin-bottom: auto;" id="navbar nav-main">
         <b-navbar-brand>
@@ -165,7 +164,7 @@ export default {
   confirmButtonColor: '#3085d6',
   cancelButtonColor: '#d33',
   confirmButtonText: 'Yes'
-}).then((result) => {
+}).then(result => {
   if (result.isConfirmed) {
     document.getElementById("loginButton").style.display = ""
                 document.getElementById("logDP").style.display = "none"
@@ -173,8 +172,8 @@ export default {
                 localStorage.removeItem("id") 
                 localStorage.removeItem("usernameTag")
                 document.getElementById("loggedInData").innerHTML = 'Currently not logged in'
+  }
 })
-    }
     }
 }
 </script>
