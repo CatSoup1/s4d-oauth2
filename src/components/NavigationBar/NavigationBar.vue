@@ -24,7 +24,7 @@
 
                     <b-button id="loggedInData" style="color: white; margin-right: 5px; margin-top: auto; margin-bottom: auto;"><img id="discordPfp" src=" " style=""/>Currently not logged in</b-button>
                     <logOut></logOut>
-                <b-button style="margin-right: 4px;border-radius: 0em; border-top-left-radius: 0.25em; border-bottom-left-radius: 0.25em" href="https://discord.com/api/oauth2/authorize?client_id=938552684942880869&redirect_uri=https%3A%2F%2Fs4d-xl83.netlify.app%2F&response_type=token&scope=identify">
+                <b-button v-on:click="login()" id="loginButton" style="margin-right: 4px;border-radius: 0em; border-top-left-radius: 0.25em; border-bottom-left-radius: 0.25em" href="https://discord.com/api/oauth2/authorize?client_id=938552684942880869&redirect_uri=https%3A%2F%2Fs4d-xl83.netlify.app%2F&response_type=token&scope=identify">
                 <b-icon-discord></b-icon-discord>
                 </b-button>
                 <b-button style="border-right-color: #161719; border-radius: 0em; border-top-left-radius: 0.25em; border-bottom-left-radius: 0.25em">
@@ -155,7 +155,11 @@ export default {
                     });
                 }
             });
-        }
+        },
+        login() {
+        console.log("clicked")
+        document.getElementById("loginButton").style.display = "none"
     }
+    },
 }
 </script>
