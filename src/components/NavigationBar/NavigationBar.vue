@@ -79,6 +79,7 @@ export default {
             if (!localStorage.getItem("usernameTag")) {
                 return
             } else {
+                document.getElementById("loginButton").style.display = "none"
                 var pfpHash = localStorage.getItem("avatarHash")
                 var UserId = localStorage.getItem("id") 
                 var username = localStorage.getItem("usernameTag")
@@ -157,8 +158,6 @@ export default {
             });
         },
         login() {
-        console.log("clicked")
-        document.getElementById("loginButton").style.display = "none"
     }
     },
 }
