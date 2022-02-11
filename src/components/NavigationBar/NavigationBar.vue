@@ -28,7 +28,7 @@
                 <b-icon-discord></b-icon-discord>
                 </b-button>
                 <b-button style="border-right-color: #161719; border-radius: 0em; border-top-left-radius: 0.25em; border-bottom-left-radius: 0.25em">
-                <span contenteditable="true" id="docName" style="">{{ $t("untitled") }}</span>
+                <span contenteditable="true" id="docName" style="margin-top: auto; margin-bottom: auto;">{{ $t("untitled") }}</span>
                 </b-button>
                 <b-button id="v-step-2" :disabled="!configurationValidated" style="border-radius: 0em; border-top-right-radius: 0.25em; border-bottom-right-radius: 0.25em" @click="exportToCode">
                     <b-icon-download></b-icon-download>
