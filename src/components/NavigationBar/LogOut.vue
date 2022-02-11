@@ -1,5 +1,5 @@
  <template>
-    <b-nav-item-dropdown id="v-step-0" :text="test" right>
+    <b-nav-item-dropdown style="margin-right: 10px;" id="v-step-0" :text="test" right>
         <b-dropdown-item @click="logOut()">Log Out</b-dropdown-item>
       
       </b-nav-item-dropdown>
