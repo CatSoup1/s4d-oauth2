@@ -22,7 +22,7 @@
             </b-navbar-nav>
             <b-navbar-nav style="margin-top: auto; margin-bottom: auto;" class="ml-auto">
                     <b-button id="loggedInData" style="color: white; margin-right: 5px; margin-top: auto; margin-bottom: auto;"><img id="discordPfp" src=" " style=""/>Currently not logged in</b-button>
-                    <logOut style="display: none;"></logOut>
+                    <logOut id="logDP" style="display: none;"></logOut>
                 <b-button v-on:click="login()" id="loginButton" style="margin-right: 4px;border-radius: 0em; border-top-left-radius: 0.25em; border-bottom-left-radius: 0.25em" href="https://discord.com/api/oauth2/authorize?client_id=938552684942880869&redirect_uri=https%3A%2F%2Fs4d-xl83.netlify.app%2F&response_type=token&scope=identify">
                 <b-icon-discord></b-icon-discord>
                 </b-button>
@@ -79,6 +79,7 @@ export default {
                 return
             } else {
                 document.getElementById("loginButton").style.display = "none"
+                document.getElementById("logDP").style.display = ""
                 var pfpHash = localStorage.getItem("avatarHash")
                 var UserId = localStorage.getItem("id") 
                 var username = localStorage.getItem("usernameTag")
