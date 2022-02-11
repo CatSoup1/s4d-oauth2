@@ -22,8 +22,7 @@
             </b-navbar-nav>
             <b-navbar-nav class="ml-auto">
                     <img id="discordPfp" src="" width="40" draggable="true" style="margin-right: 5px; border-radius: 50%;">
-                    <logOut></logOut>
-            <b-button id="loggedInData" style="color: white; margin-right: 5px; margin-top: auto; margin-bottom: auto;"><img id="discordPfp" src=" " style=""/>Currently not logged in</b-button> <!-- :O  u need need to center urself css does it for u x)-->
+                    <logOut><b-button id="loggedInData" style="color: white; margin-right: 5px; margin-top: auto; margin-bottom: auto;"><img id="discordPfp" src=" " style=""/>Currently not logged in</b-button></logOut>
                 <b-button style="margin-right: 4px;border-radius: 0em; border-top-left-radius: 0.25em; border-bottom-left-radius: 0.25em" href="https://discord.com/api/oauth2/authorize?client_id=938552684942880869&redirect_uri=https%3A%2F%2Fs4d-xl83.netlify.app%2F&response_type=token&scope=identify">
                 <b-icon-discord></b-icon-discord>
                 </b-button>
