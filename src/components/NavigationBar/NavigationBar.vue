@@ -51,7 +51,6 @@ import CodeModal from "./CodeModal.vue";
 import preBuilds from "./preBuilds.vue";
 import ToolboxModal from "./ToolboxModal.vue";
 import localforage from 'localforage';
-import logOut from './LogOut.vue'
 import r from "./requires"
 export default {
     name: "navbar",
@@ -63,7 +62,6 @@ export default {
         CodeModal,
         TokenModal,
         preBuilds,
-        logOut,
         ToolboxModal
     },
     computed: {
