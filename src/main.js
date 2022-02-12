@@ -215,10 +215,10 @@ async function getAccessCode() {
                         },
                     }).then(result => result.json())
                         .then(response => {
-                            const { username, discriminator, id, avatar } = response;
-                            localStorage.setItem('usernameTag', String(username) + "#" + String(discriminator)); //that would work x)
-                            localStorage.setItem('id', String(id))
-                            localStorage.setItem('avatarHash', String(avatar))
+                            console.log(responce)
+                            localStorage.setItem('usernameTag', String(responce.username) + "#" + String(responce.discriminator)); //that would work x)
+                            localStorage.setItem('id', String(responce.id))
+                            localStorage.setItem('avatarHash', String(responce.avatar))
                              Swal.fire({
                 position: 'center',
                 icon: 'success',
