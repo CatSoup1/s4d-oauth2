@@ -203,7 +203,7 @@ async function getAccessCode() {
                         'Content-Type': 'application/x-www-form-urlencoded',
                         },
                 }).then(responce => {
-                    console.log(responce)
+                    console.log(responce.json())
                 })
 }
 new Vue({
