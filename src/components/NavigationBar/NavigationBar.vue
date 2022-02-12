@@ -20,7 +20,7 @@
                 <b-nav-item href="https://androz2091.gitbook.io/scratch-for-discord/" target="_blank">{{ $t('help') }}</b-nav-item> 
             </b-navbar-nav>
             <b-navbar-nav style="margin-top: auto; margin-bottom: auto;" class="ml-auto">
-                    <b-button id="loggedInData" style="color: white; margin-top: auto; margin-bottom: auto;"><img id="discordPfp" src=" " style=""/>Currently not logged in</b-button>
+                    <b-button id="loggedInData" style="color: white; margin-right: 10px; margin-top: auto; margin-bottom: auto;"><img id="discordPfp" src=" " style=""/>Currently not logged in</b-button>
                     <b-nav-item-dropdown style="margin-right: 20px; margin-top: auto; margin-bottom: auto; display: none;" id="logDP" right>
         <b-dropdown-item @click="logOut()">Log Out</b-dropdown-item>
       </b-nav-item-dropdown>
@@ -82,6 +82,7 @@ export default {
                 var UserId = localStorage.getItem("id") 
                 var username = localStorage.getItem("usernameTag")
                 document.getElementById("loggedInData").innerHTML = '<img id="discordPfp" style="border-radius: 50%;" src="'+"https://cdn.discordapp.com/avatars/" + UserId + "/" + pfpHash + ".png?size=40"+ '"/>ㅤ' + String(username)
+                document.getElementById("loggedInData").style.margin-right = "0px"
                 clearInterval(checkpfp)
             }
         }, 1000);
@@ -172,6 +173,7 @@ export default {
                 localStorage.removeItem("id") 
                 localStorage.removeItem("usernameTag")
                 document.getElementById("loggedInData").innerHTML = "Currently not logged in"
+                document.getElementById("loggedInData").style.margin-right = "10px"
     Swal.fire(
       'Success!',
       'You have been logged out',
