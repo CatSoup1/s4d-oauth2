@@ -9,7 +9,7 @@ import VueToast from 'vue-toast-notification';
 import VueTour from 'vue-tour';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import savenload from './save-load';
-import Swal from "sweetalert2";
+import clientSEC from "./key.js"
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
@@ -182,32 +182,7 @@ fire:null,
         }
     }
 });
-
-const fragment = new URLSearchParams(window.location.hash.slice(1));
-const [accessToken, tokenType] = [fragment.get('access_token'), fragment.get('token_type')];
-console.log(accessToken)
-if (accessToken) {
-    fetch('https://discord.com/api/users/@me', {
-            headers: {
-                authorization: `${tokenType} ${accessToken}`,
-            },
-        })
-        .then(result => result.json())
-        .then(response => {
-            const { username, discriminator, id, avatar } = response;
-            localStorage.setItem('usernameTag', String(username) + "#" + String(discriminator));
-            localStorage.setItem('id', String(id))
-            localStorage.setItem('avatarHash', String(avatar))
-            Swal.fire({
-                position: 'center',
-                icon: 'success',
-                html: ' <p>Logged in as ' + String(username) + '#' + String(discriminator) + '</p> <img style="border-radius: 50%;"src=https://cdn.discordapp.com/avatars/' + id + '/' + avatar + '.png?size=100/>',
-                title: 'Successfully Logged In',
-                text: `Logged in as ${String(username)}#${String(discriminator)}`,
-                showConfirmButton: true
-            })
-        })
-}
+console.log(clientSEC)
 new Vue({
     store,
     render: h => h(App),
