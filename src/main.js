@@ -182,7 +182,29 @@ fire:null,
         }
     }
 });
-console.log(clientSEC)
+let params = new URLSearchParams(location.search);
+var code = params.get('code')
+const clientID = "938552684942880869"
+if (code) {
+    getAccessCode()
+}
+async function getAccessCode() {
+    const oauthResult = await fetch('https://discord.com/api/oauth2/token', {
+                    method: 'POST',
+                    body: new URLSearchParams({
+                    client_id: clientID,
+                    client_secret: clientSEC,
+                    code: code,
+                    grant_type: 'authorization_code',
+                    redirect_uri: `https://s4d-xl83.onrender.com`,
+                    scope: 'identify',
+                    }),
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                });
+                console.log(oauthResult)
+}
 new Vue({
     store,
     render: h => h(App),
