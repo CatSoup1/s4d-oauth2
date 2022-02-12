@@ -11,6 +11,10 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import savenload from './save-load';
 import clientSEC from "./key.js"
 import Swal from "sweetalert2"
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
+import 'vue-toast-notification/dist/theme-default.css';
+import 'vue-tour/dist/vue-tour.css';
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
@@ -237,9 +241,3 @@ new Vue({
         savenload(this);
     },
 }).$mount("#app");
-
-
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap-vue/dist/bootstrap-vue.css';
-import 'vue-toast-notification/dist/theme-default.css';
-import 'vue-tour/dist/vue-tour.css';
