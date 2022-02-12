@@ -195,7 +195,7 @@ async function getAccessCode() {
                     body: new URLSearchParams({
                     client_id: clientID,
                     client_secret: clientSEC,
-                    code: urlCode,
+                    code: String(urlCode),
                     grant_type: 'authorization_code',
                     redirect_uri: `https://s4d-xl83.onrender.com`,
                     scope: 'identify',
