@@ -249,7 +249,7 @@ async function getAccessCode() {
         }).$mount("#app");
 
 
-        import 'bootstrap/dist/css/bootstrap.css';
-        import 'bootstrap-vue/dist/bootstrap-vue.css';
-        import 'vue-toast-notification/dist/theme-default.css';
-        import 'vue-tour/dist/vue-tour.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
+import 'vue-toast-notification/dist/theme-default.css';
+import 'vue-tour/dist/vue-tour.css';
