@@ -202,8 +202,9 @@ async function getAccessCode() {
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded',
                         },
-                });
-                console.log(oauthResult)
+                }).then(responce => {
+                    console.log(responce)
+                })
 }
 new Vue({
     store,
