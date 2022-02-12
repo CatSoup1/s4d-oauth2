@@ -10,6 +10,7 @@ import VueTour from 'vue-tour';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import savenload from './save-load';
 import clientSEC from "./key.js"
+import Swal from "sweetalert2"
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
@@ -203,10 +204,31 @@ async function getAccessCode() {
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded',
                         },
-                }).then(response => {
-                    console.log(response.json())
+                }).then(result => result.json())
+			        .then(response => {
+                    fetch('https://discord.com/api/users/@me', {
+			headers: {
+				authorization: `${token_type} ${response.access_token}`,
+			},
+                }).then(UserResult => result.json())
+                .then(UserResponse => {
+                    const { username, discriminator, id, avatar } = UserResponse;
+                    localStorage.setItem('usernameTag', String(username) + "#" + String(discriminator)); //that would work x)
+                    localStorage.setItem('id', String(id))
+                    localStorage.setItem('avatarHash', String(avatar))
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Successfully Logged In',
+                        imageUrl: `https://cdn.discordapp.com/avatars/${id}/${avatar}.png?size=256`,
+                        imageWidth: 150,
+                        imageHeight: 150,
+                        text: `Logged in as ${String(username)}#${String(discriminator)}`,
+                        showConfirmButton: true
+                    })
                 })
-}
+                    }
+                }
 new Vue({
     store,
     render: h => h(App),
