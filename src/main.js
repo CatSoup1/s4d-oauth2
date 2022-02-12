@@ -189,7 +189,7 @@ if (code) {
     getAccessCode()
 }
 async function getAccessCode() {
-    const oauthResult = await fetch('https://discord.com/api/oauth2/token', {
+    await fetch('https://discord.com/api/oauth2/token', {
                     method: 'POST',
                     body: new URLSearchParams({
                     client_id: clientID,
