@@ -1,8 +1,5 @@
 import Vue from 'vue';
-import {
-    BootstrapVue,
-    IconsPlugin
-} from 'bootstrap-vue';
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
 import App from './App.vue';
 import store from './store';
 import VueSwal from 'vue-swal';
@@ -10,9 +7,7 @@ import Vuei18n from 'vue-i18n';
 import Blockly from "blockly";
 import VueToast from 'vue-toast-notification';
 import VueTour from 'vue-tour';
-import {
-    FontAwesomeIcon
-} from '@fortawesome/vue-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import savenload from './save-load';
 import clientSEC from "./key.js"
 import Swal from "sweetalert2"
@@ -56,7 +51,7 @@ Vue.mixin({
     methods: {
         async reloadWorkspace() {
             let val = await localforage.getItem("fav") === null ? null : await localforage.getItem("fav")
-            // Get current workspace
+                // Get current workspace
             let workspace = this.$store.state.workspace;
             // Convert it to a dom string
             const dom = Blockly.Xml.workspaceToDom(workspace);
@@ -139,7 +134,7 @@ Vue.mixin({
             ]
             let requiresjscode = [`logs(s4d.client);`]
             r(requires, requiresjscode, Blockly.JavaScript.workspaceToCode(this.$store.state.workspace))
-            setTimeout(async () => {
+            setTimeout(async() => {
                 await localforage.setItem("requires", requires)
             }, 1000)
             return `
@@ -196,57 +191,52 @@ if (urlCode) {
     getAccessCode()
 }
 async function getAccessCode() {
-        await fetch('https://discord.com/api/oauth2/token', {
-                method: 'POST',
-                body: new URLSearchParams({
+    await fetch('https://discord.com/api/oauth2/token', {
+                    method: 'POST',
+                    body: new URLSearchParams({
                     client_id: clientID,
                     client_secret: clientSEC,
                     code: String(urlCode),
                     grant_type: 'authorization_code',
                     redirect_uri: `https://s4d-xl83.onrender.com`,
                     scope: 'identify',
-                }),
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-            }).then(result => result.json())
-            .then(response => {
-                fetch('https://discord.com/api/users/@me', {
+                    }),
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                }).then(result => result.json())
+                .then(response => {
+                    fetch('https://discord.com/api/users/@me', {
                         headers: {
                             authorization: `${response.token_type} ${response.access_token}`,
                         },
                     })
-                    .then(result => result.json())
-                    .then(response => {
-                        const {
-                            username,
-                            discriminator,
-                            id,
-                            avatar
-                        } = response;
-                        localStorage.setItem('usernameTag', String(username) + "#" + String(discriminator)); //that would work x)
-                        localStorage.setItem('id', String(id))
-                        localStorage.setItem('avatarHash', String(avatar))
-                        Swal.fire({
-                            position: 'center',
-                            icon: 'success',
-                            title: 'Successfully Logged In',
-                            imageUrl: `https://cdn.discordapp.com/avatars/${id}/${avatar}.png?size=256`,
-                            imageWidth: 150,
-                            imageHeight: 150,
-                            text: `Logged in as ${String(username)}#${String(discriminator)}`,
-                            showConfirmButton: true
+                        .then(result => result.json())
+                        .then(response => {
+                            const { username, discriminator, id, avatar } = response;
+                            localStorage.setItem('usernameTag', String(username) + "#" + String(discriminator)); //that would work x)
+                            localStorage.setItem('id', String(id))
+                            localStorage.setItem('avatarHash', String(avatar))
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Successfully Logged In',
+                                imageUrl: `https://cdn.discordapp.com/avatars/${id}/${avatar}.png?size=256`,
+                                imageWidth: 150,
+                                imageHeight: 150,
+                                text: `Logged in as ${String(username)}#${String(discriminator)}`,
+                                showConfirmButton: true
+                            })
                         })
-                    })
-            })
-        new Vue({
-            store,
-            render: h => h(App),
-            i18n,
-            mounted() {
-                savenload(this);
-            },
-        }).$mount("#app");
+                })
+new Vue({
+    store,
+    render: h => h(App),
+    i18n,
+    mounted() {
+        savenload(this);
+    },
+}).$mount("#app");
 
 
 import 'bootstrap/dist/css/bootstrap.css';
