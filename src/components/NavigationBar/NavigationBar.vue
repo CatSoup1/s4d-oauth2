@@ -82,7 +82,7 @@ export default {
                 var UserId = localStorage.getItem("id") 
                 var username = localStorage.getItem("usernameTag")
                 document.getElementById("loggedInData").innerHTML = '<img id="discordPfp" style="border-radius: 50%;" src="'+"https://cdn.discordapp.com/avatars/" + UserId + "/" + pfpHash + ".png?size=40"+ '"/>ㅤ' + String(username)
-                document.getElementById("loggedInData").style.margin-right = "0px"
+                document.getElementById("loggedInData").style.marginRight = "0px"
                 clearInterval(checkpfp)
             }
         }, 1000);
@@ -173,7 +173,7 @@ export default {
                 localStorage.removeItem("id") 
                 localStorage.removeItem("usernameTag")
                 document.getElementById("loggedInData").innerHTML = "Currently not logged in"
-                document.getElementById("loggedInData").style.margin-right = "10px"
+                document.getElementById("loggedInData").style.marginRight = "10px"
     Swal.fire(
       'Success!',
       'You have been logged out',
