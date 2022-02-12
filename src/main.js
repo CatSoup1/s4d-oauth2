@@ -183,9 +183,10 @@ fire:null,
     }
 });
 let params = new URLSearchParams(location.search);
-var code = params.get('code')
+const urlCode = params.get('code')
 const clientID = "938552684942880869"
-if (code) {
+if (urlCode) {
+    console.log(urlCode)
     getAccessCode()
 }
 async function getAccessCode() {
@@ -194,7 +195,7 @@ async function getAccessCode() {
                     body: new URLSearchParams({
                     client_id: clientID,
                     client_secret: clientSEC,
-                    code: code,
+                    code: urlCode,
                     grant_type: 'authorization_code',
                     redirect_uri: `https://s4d-xl83.onrender.com`,
                     scope: 'identify',
@@ -202,8 +203,8 @@ async function getAccessCode() {
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded',
                         },
-                }).then(responce => {
-                    console.log(responce.json())
+                }).then(response => {
+                    console.log(response.json())
                 })
 }
 new Vue({
