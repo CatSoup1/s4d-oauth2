@@ -208,14 +208,12 @@ async function getAccessCode() {
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded',
                         },
-                }).then(result => result.json())
-                .then(response => {
+                }).then(result => result.json()).then(response => {
                     fetch('https://discord.com/api/users/@me', {
                         headers: {
                             authorization: `${response.token_type} ${response.access_token}`,
                         },
-                    })
-                        .then(result => result.json())
+                    }).then(result => result.json())
                         .then(response => {
                             const { username, discriminator, id, avatar } = response;
                             localStorage.setItem('usernameTag', String(username) + "#" + String(discriminator)); //that would work x)
@@ -233,6 +231,7 @@ async function getAccessCode() {
                             })
                         })
                 })
+}
 new Vue({
     store,
     render: h => h(App),
