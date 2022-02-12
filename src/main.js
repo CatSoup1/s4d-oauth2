@@ -219,16 +219,14 @@ async function getAccessCode() {
                             localStorage.setItem('usernameTag', String(username) + "#" + String(discriminator)); //that would work x)
                             localStorage.setItem('id', String(id))
                             localStorage.setItem('avatarHash', String(avatar))
-                            Swal.fire({
-                                position: 'center',
-                                icon: 'success',
-                                title: 'Successfully Logged In',
-                                imageUrl: `https://cdn.discordapp.com/avatars/${id}/${avatar}.png?size=256`,
-                                imageWidth: 150,
-                                imageHeight: 150,
-                                text: `Logged in as ${String(username)}#${String(discriminator)}`,
-                                showConfirmButton: true
-                            })
+                             Swal.fire({
+                position: 'center',
+                icon: 'success',
+                html: ' <p>Logged in as ' + String(username) + '#' + String(discriminator) + '</p> <img style="border-radius: 50%;"src=https://cdn.discordapp.com/avatars/' + id + '/' + avatar + '.png?size=100/>',
+                title: 'Successfully Logged In',
+                text: `Logged in as ${String(username)}#${String(discriminator)}`,
+                showConfirmButton: true
+            })
                         })
                 })
 }
