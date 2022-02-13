@@ -16,7 +16,7 @@ import {Backpack} from '@blockly/workspace-backpack';
 var theme = Blockly.Theme.defineTheme('blue2', {
     'base': Blockly.Themes.Classic,
     'componentStyles': {
-      'workspaceBackgroundColour': '#37466e',
+      'workspaceBackgroundColour': '#8195c9',
       'toolboxBackgroundColour': '#3e4458',
       'toolboxForegroundColour': '#23283b',
       'flyoutBackgroundColour': '#252526',
