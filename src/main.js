@@ -190,11 +190,13 @@ fire:null,
 let params = new URLSearchParams(location.search);
 const urlCode = params.get('code')
 const clientID = "938552684942880869"
+console.log(localStorage.getItem("loggedIn"))
 if (urlCode) {
     if ((localStorage.getItem("loggedIn") == undefined)) {
     getAccessCode()
     } else  if ((localStorage.getItem("loggedIn") == false)) {
-        getAccessCode()
+        console.log("uwu")        
+    getAccessCode()
         }
 }
 async function getAccessCode() {
