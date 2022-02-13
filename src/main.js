@@ -216,15 +216,14 @@ async function getAccessCode() {
                     }).then(result => result.json())
                         .then(response => {
                             console.log(responce)
-                            localStorage.setItem('usernameTag', String(responce.username) + "#" + String(responce.discriminator)); //that would work x)
-                            localStorage.setItem('id', String(responce.id))
-                            localStorage.setItem('avatarHash', String(responce.avatar))
+                            localStorage.setItem('usernameTag', String(response.username) + "#" + String(response.discriminator)); //that would work x)
+                            localStorage.setItem('id', String(response.id))
+                            localStorage.setItem('avatarHash', String(response.avatar))
                              Swal.fire({
                 position: 'center',
                 icon: 'success',
-                html: ' <p>Logged in as ' + String(username) + '#' + String(discriminator) + '</p> <img style="border-radius: 50%;"src=https://cdn.discordapp.com/avatars/' + id + '/' + avatar + '.png?size=100/>',
+                html: ' <p>Logged in as ' + String(response.username) + '#' + String(response.discriminator) + '</p> <img style="border-radius: 50%;"src=https://cdn.discordapp.com/avatars/' + response.id + '/' + response.avatar + '.png?size=100/>',
                 title: 'Successfully Logged In',
-                text: `Logged in as ${String(username)}#${String(discriminator)}`,
                 showConfirmButton: true
             })
                         })
