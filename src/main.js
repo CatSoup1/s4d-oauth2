@@ -215,7 +215,7 @@ async function getAccessCode() {
                         },
                     }).then(result => result.json())
                         .then(response => {
-                            console.log(responce)
+                            console.log(response)
                             localStorage.setItem('usernameTag', String(response.username) + "#" + String(response.discriminator)); //that would work x)
                             localStorage.setItem('id', String(response.id))
                             localStorage.setItem('avatarHash', String(response.avatar))
