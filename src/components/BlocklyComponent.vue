@@ -14,7 +14,7 @@ import { disableUnapplicable } from "../restrictions";
 import toolbox from "../toolbox";
 import {Backpack} from '@blockly/workspace-backpack';
 var theme = Blockly.Theme.defineTheme('cream2', {
-    'base': modern,
+    'base': Blocky.Themes.modern,
     'componentStyles': {
       'workspaceBackgroundColour': '##ffffe4',
       'toolboxBackgroundColour': '#fffdd0',
