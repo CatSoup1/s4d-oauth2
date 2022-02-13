@@ -1,5 +1,5 @@
 <template>
-    <b-navbar toggleable="lg" type="dark" style="background-color:#161719;user-select:none; margin-top: auto; margin-bottom: auto;" id="navbar nav-main">
+    <b-navbar toggleable="lg" type="dark" style="background-color:#1e2332;user-select:none; margin-top: auto; margin-bottom: auto;" id="navbar nav-main">
         <b-navbar-brand>
             <img src="scratch.png" width="40" draggable="false">
             Scratch For Discord
