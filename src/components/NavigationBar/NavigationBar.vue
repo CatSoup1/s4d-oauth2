@@ -173,6 +173,7 @@ export default {
                 localStorage.removeItem("usernameTag")
                 document.getElementById("loggedInData").innerHTML = "Currently not logged in"
                 document.getElementById("loggedInData").style.marginRight = "10px"
+                document.getElementById("loginButton").style.display = ""
     Swal.fire(
       'Success!',
       'You have been logged out',
