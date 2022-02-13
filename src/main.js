@@ -191,7 +191,9 @@ let params = new URLSearchParams(location.search);
 const urlCode = params.get('code')
 const clientID = "938552684942880869"
 if (urlCode) {
+    if (localStorage.getItem("loggedIn") == false || undefined) {
     getAccessCode()
+    }
 }
 async function getAccessCode() {
     await fetch('https://discord.com/api/oauth2/token', {
@@ -217,6 +219,7 @@ async function getAccessCode() {
                             localStorage.setItem('usernameTag', String(response.username) + "#" + String(response.discriminator)); //that would work x)
                             localStorage.setItem('id', String(response.id))
                             localStorage.setItem('avatarHash', String(response.avatar))
+                            localStorage.setItem('loggedIn', true)
                              Swal.fire({
                 position: 'center',
                 icon: 'success',

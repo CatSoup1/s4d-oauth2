@@ -169,6 +169,7 @@ export default {
   if (result.isConfirmed) {
        document.getElementById("loginButton").style.display = ""
                 document.getElementById("logDP").style.display = "none"
+                localStorage.setItem('loggedIn', false)
                 localStorage.removeItem("avatarHash")
                 localStorage.removeItem("id") 
                 localStorage.removeItem("usernameTag")
