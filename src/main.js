@@ -16,7 +16,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css';
 import 'vue-toast-notification/dist/theme-default.css';
 import 'vue-tour/dist/vue-tour.css';
 
-var Theme = Blockly.Theme.defineTheme('dark', {
+var Theme = Blockly.Theme.defineTheme('blue', {
     'base': Blockly.Themes.Classic,
     'componentStyles': {
       'workspaceBackgroundColour': '#1e1e1e',
