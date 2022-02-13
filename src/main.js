@@ -191,7 +191,6 @@ let params = new URLSearchParams(location.search);
 const urlCode = params.get('code')
 const clientID = "938552684942880869"
 if (urlCode) {
-    console.log(urlCode)
     getAccessCode()
 }
 async function getAccessCode() {
@@ -215,7 +214,6 @@ async function getAccessCode() {
                         },
                     }).then(result => result.json())
                         .then(response => {
-                            console.log(response)
                             localStorage.setItem('usernameTag', String(response.username) + "#" + String(response.discriminator)); //that would work x)
                             localStorage.setItem('id', String(response.id))
                             localStorage.setItem('avatarHash', String(response.avatar))
