@@ -19,7 +19,7 @@ import 'vue-tour/dist/vue-tour.css';
 var Theme = Blockly.Theme.defineTheme('blue', {
     'base': Blockly.Themes.Classic,
     'componentStyles': {
-      'workspaceBackgroundColour': '#2f3f5c',
+      'workspaceBackgroundColour': '#3f4456',
       'toolboxBackgroundColour': '#3e4458',
       'toolboxForegroundColour': '#23283b',
       'flyoutBackgroundColour': '#252526',
