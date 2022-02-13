@@ -357,9 +357,7 @@ function svgToPng_(data, width, height, callback) {
             }
         });
 
-const workspace = Blockly.inject('blocklyDiv');
 const workspaceSearch = new WorkspaceSearch(workspace);
-
 workspaceSearch.init();
             Blockly.ContextMenuRegistry.registry.register({
       displayText: 'Add to favorite',
