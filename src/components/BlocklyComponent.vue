@@ -13,12 +13,12 @@ import Blockly from "blockly";
 import { disableUnapplicable } from "../restrictions";
 import toolbox from "../toolbox";
 import {Backpack} from '@blockly/workspace-backpack';
-var theme = Blockly.Theme.defineTheme('blue2', {
+var theme = Blockly.Theme.defineTheme('cream2', {
     'base': Blockly.Themes.Classic,
     'componentStyles': {
-      'workspaceBackgroundColour': '#3f4456',
-      'toolboxBackgroundColour': '#383c4a',
-      'toolboxForegroundColour': '#22252e',
+      'workspaceBackgroundColour': '##ffffe4',
+      'toolboxBackgroundColour': '#fffdd0',
+      'toolboxForegroundColour': '#dedcb4',
       'flyoutBackgroundColour': '#252526',
       'flyoutForegroundColour': '#ccc',
       'flyoutOpacity': 1,
