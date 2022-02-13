@@ -414,7 +414,7 @@ export default (Blockly, value) => {
                 </value>
             </block>
         </category>
-        <sep class="bt" />
+        <sep style="color: white;" class="bt"/>
         <category name="{{ TOOLBOX_VARIABLES }}" colour="#a55b80" custom="VARIABLE" />
         <category name="{{ TOOLBOX_FUNCTIONS }}" colour="#995ba5" custom="PROCEDURE" />
 	
@@ -437,7 +437,7 @@ export default (Blockly, value) => {
             <block type="s4d_return"></block>
             <block type="s4d_string_to_number"></block>
         </category>
-        <sep class="bt"/>
+        <sep style="color: white;" class="bt"/>
     <category name="Non Androz Blocks">
           <category name="henpokpok" colour="#64C9FF">
         <category name="Reactions" colour="#FF6464">
@@ -706,11 +706,11 @@ export default (Blockly, value) => {
 	</category>
 </category>
 </category>
-                <sep class="bt"/>
+<sep style="color: white;" class="bt"/>
                     <category name="favorite" colour="#FFFF00" css-icon="customIcon fa fa-star">
                         ${value === null ? "" : value.map(c => `<block type="${c}"/>`)}
                     </category>
-				<sep class="bt"/>
+                    <sep style="color: white;" class="bt"/>
 				
 				
 				
@@ -1287,7 +1287,7 @@ export default (Blockly, value) => {
         </block>
 </category>
 		</category>
-        <sep class="bt"/>
+        <sep style="color: white;" class="bt"/>
         <category name="{{ TOOLBOX_BASE }}" colour="#F46580">
         <label text="%{BKY_MANDATORY_BLOCKS}" web-class="boldtext"></label>
             <block type="s4d_login">
@@ -1436,7 +1436,7 @@ export default (Blockly, value) => {
             <block type="s4d_remove_all_reactions"/>
             <block type="s4d_remove_reactions"/>
         </category>
-        <sep class="bt"/>
+        <sep style="color: white;" class="bt"/>
         <category name="{{ TOOLBOX_SERVER }}" colour="#D85E47">
             <label text="%{BKY_FIND_SERVER}"></label>
             <block type="s4d_get_server"></block>
@@ -1541,9 +1541,9 @@ export default (Blockly, value) => {
             <block type="s4d_send_wait_reply_dm"></block>
             <block type="s4d_send_wait_reply_dm_value"></block>
         </category>
-        <sep class="bt"/>
-        <sep class="bt"/>
-				<sep class="bt"/>
+        <sep style="color: white;" class="bt"/>
+        <sep style="color: white;" class="bt"/>
+		<sep style="color: white;" class="bt"/>
         <category name="{{ TOOLBOX_DATABASE }}" colour="#FF0000">
             <label text="%{BKY_LABEL_READ_DB}"></label>
             <block type="s4d_get_data">
