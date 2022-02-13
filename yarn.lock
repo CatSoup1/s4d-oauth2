@@ -946,10 +946,10 @@
   resolved "https://registry.npmjs.org/@blockly/theme-dark/-/theme-dark-2.0.6.tgz"
   integrity sha512-2gPz3Iw+VjBFaNhoYXm/zRA2Xhe/nDnpOyPxbav7sGs4XcO4F0yPruuXxBm7oGGbGudmxmJXhTdmV+4d8MpvSg==
 
-"@blockly/theme-modern@^2.1.10":
-  version "2.1.15"
-  resolved "https://registry.npmjs.org/@blockly/theme-modern/-/theme-modern-2.1.15.tgz"
-  integrity sha512-rVBetk9gitNzrMVab5bAfJTeJPuntn/pKhL6ASG1fd0f3UAF7Ns8W7KgEBZrVbZgdcrfzt33ijgQT0cu+RI/hA==
+"@blockly/theme-modern@^2.1.28":
+  version "2.1.28"
+  resolved "https://registry.yarnpkg.com/@blockly/theme-modern/-/theme-modern-2.1.28.tgz#dfd4e3d3dbddb13cf6ab458512edf27873e30b91"
+  integrity sha512-SRPrQJOvTU8yC+NFnfFipaciCJEfmIG+imPwNcL1WZ/pPct6ojEDwHKAalWkHGLrTb0rmOaDVeHJJQx+HZmQsQ==
 
 "@blockly/workspace-backpack@^1.0.9":
   version "1.0.9"
