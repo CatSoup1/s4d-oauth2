@@ -191,9 +191,11 @@ let params = new URLSearchParams(location.search);
 const urlCode = params.get('code')
 const clientID = "938552684942880869"
 if (urlCode) {
-    if ((localStorage.getItem("loggedIn") == false) || (localStorage.getItem("loggedIn") == undefined)) {
+    if ((localStorage.getItem("loggedIn") == undefined)) {
     getAccessCode()
-    }
+    } else  if ((localStorage.getItem("loggedIn") == false)) {
+        getAccessCode()
+        }
 }
 async function getAccessCode() {
     await fetch('https://discord.com/api/oauth2/token', {
