@@ -168,9 +168,6 @@ export default {
 }).then((result) => {
   if (result.isConfirmed) {
       var url = new URL(document.location.href);
-    url.searchParams.delete('code');
-    window.history.replaceState({}, document.title, url);
-       document.getElementById("loginButton").style.display = ""
                 document.getElementById("logDP").style.display = "none"
                 localStorage.setItem('loggedIn', false)
                 localStorage.removeItem("avatarHash")
@@ -178,6 +175,9 @@ export default {
                 localStorage.removeItem("usernameTag")
                 document.getElementById("loggedInData").innerHTML = "Currently not logged in"
                 document.getElementById("loggedInData").style.marginRight = "10px"
+                 var url = new URL(document.location.href);
+                url.searchParams.delete('code');
+                window.history.replaceState({}, document.title, url);
     Swal.fire(
       'Success!',
       'You have been logged out',
