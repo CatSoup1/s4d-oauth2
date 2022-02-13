@@ -13,7 +13,23 @@ import Blockly from "blockly";
 import { disableUnapplicable } from "../restrictions";
 import toolbox from "../toolbox";
 import {Backpack} from '@blockly/workspace-backpack';
-import theme from '@blockly/theme-dark';
+var theme = Blockly.Theme.defineTheme('blue', {
+    'base': Blockly.Themes.Classic,
+    'componentStyles': {
+      'workspaceBackgroundColour': '#1e1e1e',
+      'toolboxBackgroundColour': '#3e4458',
+      'toolboxForegroundColour': '#fff',
+      'flyoutBackgroundColour': '#252526',
+      'flyoutForegroundColour': '#ccc',
+      'flyoutOpacity': 1,
+      'scrollbarColour': '#797979',
+      'insertionMarkerColour': '#fff',
+      'insertionMarkerOpacity': 0.3,
+      'scrollbarOpacity': 0.4,
+      'cursorColour': '#d0d0d0',
+      'blackBackground': '#333',
+    },
+  });
 import Load from '../backpack-save-load.js';
 import { WorkspaceSearch } from '@blockly/plugin-workspace-search';
 import localforage from "localforage";
