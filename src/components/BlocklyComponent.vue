@@ -18,7 +18,7 @@ var theme = Blockly.Theme.defineTheme('blue2', {
     'componentStyles': {
       'workspaceBackgroundColour': '#3f4456',
       'toolboxBackgroundColour': '#3e4458',
-      'toolboxForegroundColour': '#23283b',
+      'toolboxForegroundColour': '#353947',
       'flyoutBackgroundColour': '#252526',
       'flyoutForegroundColour': '#ccc',
       'flyoutOpacity': 1,
