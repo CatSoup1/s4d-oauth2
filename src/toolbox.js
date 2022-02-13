@@ -414,7 +414,7 @@ export default (Blockly, value) => {
                 </value>
             </block>
         </category>
-        <sep style="color: white;" class="bt"/>
+        <sep style="background-color: white;" class="bt"/>
         <category name="{{ TOOLBOX_VARIABLES }}" colour="#a55b80" custom="VARIABLE" />
         <category name="{{ TOOLBOX_FUNCTIONS }}" colour="#995ba5" custom="PROCEDURE" />
 	
