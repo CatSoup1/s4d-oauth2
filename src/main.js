@@ -194,7 +194,7 @@ console.log(localStorage.getItem("loggedIn"))
 if (urlCode) {
     if ((localStorage.getItem("loggedIn") == undefined)) {
     getAccessCode()
-    } else  if ((localStorage.getItem("loggedIn") == false)) {
+    } else  if ((localStorage.getItem("loggedIn") == "false")) {
         console.log("uwu")        
     getAccessCode()
         }
