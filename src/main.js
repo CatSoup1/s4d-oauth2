@@ -191,7 +191,7 @@ let params = new URLSearchParams(location.search);
 const urlCode = params.get('code')
 const clientID = "938552684942880869"
 if (urlCode) {
-    if (localStorage.getItem("loggedIn") == false || undefined) {
+    if ((localStorage.getItem("loggedIn") == false) || (localStorage.getItem("loggedIn") == undefined)) {
     getAccessCode()
     }
 }
