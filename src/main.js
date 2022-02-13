@@ -15,6 +15,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 import 'vue-toast-notification/dist/theme-default.css';
 import 'vue-tour/dist/vue-tour.css';
+import { WorkspaceSearch } from '@blockly/plugin-workspace-search';
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
@@ -49,8 +50,7 @@ const i18n = new Vuei18n({
 });
 
 import toolbox from "./toolbox";
-//import {Backpack} from '@blockly/workspace-backpack';
-import Theme from '@blockly/theme-dark';
+
 Vue.mixin({
     methods: {
         async reloadWorkspace() {

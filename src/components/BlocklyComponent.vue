@@ -15,6 +15,7 @@ import toolbox from "../toolbox";
 import {Backpack} from '@blockly/workspace-backpack';
 import theme from '@blockly/theme-dark';
 import Load from '../backpack-save-load.js';
+import { WorkspaceSearch } from '@blockly/plugin-workspace-search';
 import localforage from "localforage";
 export default {
     name: "BlocklyComponent",
@@ -355,6 +356,11 @@ function svgToPng_(data, width, height, callback) {
                 toolbox: toolbox(Blockly,val),
             }
         });
+
+const workspace = Blockly.inject('blocklyDiv');
+const workspaceSearch = new WorkspaceSearch(workspace);
+
+workspaceSearch.init();
             Blockly.ContextMenuRegistry.registry.register({
       displayText: 'Add to favorite',
       preconditionFn: function(scope) {
