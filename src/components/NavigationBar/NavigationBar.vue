@@ -167,6 +167,9 @@ export default {
   confirmButtonText: 'Yes'
 }).then((result) => {
   if (result.isConfirmed) {
+      var url = new URL(document.location.href);
+    url.searchParams.delete('code');
+    window.history.replaceState({}, document.title, url);
        document.getElementById("loginButton").style.display = ""
                 document.getElementById("logDP").style.display = "none"
                 localStorage.setItem('loggedIn', false)
