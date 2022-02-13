@@ -190,14 +190,8 @@ fire:null,
 let params = new URLSearchParams(location.search);
 const urlCode = params.get('code')
 const clientID = "938552684942880869"
-console.log(localStorage.getItem("loggedIn"))
-if (urlCode) {
-    if ((localStorage.getItem("loggedIn") == undefined)) {
-    getAccessCode()
-    } else  if ((localStorage.getItem("loggedIn") == "false")) {
-        console.log("uwu")        
-    getAccessCode()
-        }
+if (urlCode) {     
+    getAccessCode()  
 }
 async function getAccessCode() {
     await fetch('https://discord.com/api/oauth2/token', {
@@ -231,6 +225,9 @@ async function getAccessCode() {
                 title: 'Successfully Logged In',
                 showConfirmButton: true
             })
+            var changeUrl = new URL(document.location.href);
+            changeUrl.searchParams.delete('code');
+            window.history.replaceState({}, document.title, changeUrl);
                         })
                 })
 }

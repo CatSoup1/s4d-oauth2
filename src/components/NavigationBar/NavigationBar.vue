@@ -168,15 +168,11 @@ export default {
 }).then((result) => {
   if (result.isConfirmed) {
                 document.getElementById("logDP").style.display = "none"
-                localStorage.setItem('loggedIn', "false")
                 localStorage.removeItem("avatarHash")
                 localStorage.removeItem("id") 
                 localStorage.removeItem("usernameTag")
                 document.getElementById("loggedInData").innerHTML = "Currently not logged in"
                 document.getElementById("loggedInData").style.marginRight = "10px"
-                 var changeUrl = new URL(document.location.href);
-                changeUrl.searchParams.delete('code');
-                window.history.replaceState({}, document.title, changeUrl);
     Swal.fire(
       'Success!',
       'You have been logged out',
