@@ -28,6 +28,12 @@ var theme = Blockly.Theme.defineTheme('cream2', {
       'scrollbarOpacity': 0.4,
       'cursorColour': '#d0d0d0',
       'blackBackground': '#333',
+      'fontStyle': {
+        'family': null, // Use default font-family.
+        'weight': null, // Use default font-weight.
+        'size': 16,
+        'color': "black"
+      },
     },
   });
 import Load from '../backpack-save-load.js';

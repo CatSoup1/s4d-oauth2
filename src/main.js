@@ -32,6 +32,12 @@ var Theme = Blockly.Theme.defineTheme('cream', {
       'scrollbarOpacity': 0.4,
       'cursorColour': '#d0d0d0',
       'blackBackground': '#333',
+      'fontStyle': {
+        'family': null, // Use default font-family.
+        'weight': null, // Use default font-weight.
+        'size': 16,
+        'color': "black"
+      },
     },
   });
 
