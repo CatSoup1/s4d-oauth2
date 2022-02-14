@@ -3,7 +3,7 @@ export default (Blockly, value) => {
     <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none;">
         
 	
-	<category name="{{ TOOLBOX_LOGIC }}" style="color: black;" colour="#5b80a5">
+	<category name="{{ TOOLBOX_LOGIC }}" css-container="textColor" colour="#5b80a5">
             <block type="controls_if" />
             <block type="logic_compare">
                 <field name="OP">EQ</field>
@@ -1606,6 +1606,12 @@ export default (Blockly, value) => {
             </block>
         </category>
     </xml>
+
+    <style>
+    .textColor {
+        color: black;
+    }
+    </style>
 `.replace(/{{\s([A-z]{3,})\s}}/g, (x) => {
       return Blockly.Msg[x.replace("{{ ", "").replace(" }}", "")];
     }))
