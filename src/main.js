@@ -15,10 +15,10 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 import 'vue-toast-notification/dist/theme-default.css';
 import 'vue-tour/dist/vue-tour.css';
-import modern from '@blockly/theme-modern';
+
 
 var Theme = Blockly.Theme.defineTheme('cream', {
-    'base': Blockly.Themes.modern,
+    'base': Blockly.Themes.Modern,
     'componentStyles': {
       'workspaceBackgroundColour': '##ffffe4',
       'toolboxBackgroundColour': '#fffdd0',

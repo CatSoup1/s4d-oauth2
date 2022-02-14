@@ -9,12 +9,11 @@
 
 <script>
 import Blockly from "blockly";
-import modern from '@blockly/theme-modern';
 import { disableUnapplicable } from "../restrictions";
 import toolbox from "../toolbox";
 import {Backpack} from '@blockly/workspace-backpack';
 var theme = Blockly.Theme.defineTheme('cream2', {
-    'base': Blockly.Themes.modern,
+    'base': Blockly.Themes.Modern,
     'componentStyles': {
       'workspaceBackgroundColour': '##ffffe4',
       'toolboxBackgroundColour': '#fffdd0',
