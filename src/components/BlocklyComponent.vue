@@ -12,12 +12,12 @@ import Blockly from "blockly";
 import { disableUnapplicable } from "../restrictions";
 import toolbox from "../toolbox";
 import {Backpack} from '@blockly/workspace-backpack';
-var theme = Blockly.Theme.defineTheme('cream2', {
-    'base': Blockly.Themes.modern,
+var Theme = Blockly.Theme.defineTheme('blueuwu', {
+    'base': Blockly.Themes.Classic,
     'componentStyles': {
-      'workspaceBackgroundColour': '##ffffe4',
-      'toolboxBackgroundColour': '#fffdd0',
-      'toolboxForegroundColour': '#dedcb4',
+      'workspaceBackgroundColour': '#3f4456',
+      'toolboxBackgroundColour': '#383c4a',
+      'toolboxForegroundColour': '#22252e',
       'flyoutBackgroundColour': '#252526',
       'flyoutForegroundColour': '#ccc',
       'flyoutOpacity': 1,
@@ -27,11 +27,6 @@ var theme = Blockly.Theme.defineTheme('cream2', {
       'scrollbarOpacity': 0.4,
       'cursorColour': '#d0d0d0',
       'blackBackground': '#333',
-      'fontStyle': {
-        'family': null, // Use default font-family.
-        'weight': null, // Use default font-weight.
-        'size': 16,
-      },
     },
   });
 import Load from '../backpack-save-load.js';

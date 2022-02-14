@@ -16,13 +16,12 @@ import 'bootstrap-vue/dist/bootstrap-vue.css';
 import 'vue-toast-notification/dist/theme-default.css';
 import 'vue-tour/dist/vue-tour.css';
 
-
-var Theme = Blockly.Theme.defineTheme('cream', {
-    'base': Blockly.Themes.modern,
+var Theme = Blockly.Theme.defineTheme('blue', {
+    'base': Blockly.Themes.Classic,
     'componentStyles': {
-      'workspaceBackgroundColour': '##ffffe4',
-      'toolboxBackgroundColour': '#fffdd0',
-      'toolboxForegroundColour': '#dedcb4',
+      'workspaceBackgroundColour': '#3f4456',
+      'toolboxBackgroundColour': '#383c4a',
+      'toolboxForegroundColour': '#22252e',
       'flyoutBackgroundColour': '#252526',
       'flyoutForegroundColour': '#ccc',
       'flyoutOpacity': 1,
@@ -32,11 +31,6 @@ var Theme = Blockly.Theme.defineTheme('cream', {
       'scrollbarOpacity': 0.4,
       'cursorColour': '#d0d0d0',
       'blackBackground': '#333',
-      'fontStyle': {
-        'family': null, // Use default font-family.
-        'weight': null, // Use default font-weight.
-        'size': 16,
-      },
     },
   });
 
