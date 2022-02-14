@@ -31,7 +31,7 @@ var theme = Blockly.Theme.defineTheme('cream2', {
         'family': null, // Use default font-family.
         'weight': null, // Use default font-weight.
         'size': 16,
-        'color': "black"
+        'colour': "black"
       },
     },
   });
