@@ -18,7 +18,7 @@ import 'vue-tour/dist/vue-tour.css';
 import modern from '@blockly/theme-modern';
 
 var Theme = Blockly.Theme.defineTheme('cream', {
-    'base': Blocky.Themes.modern,
+    'base': Blockly.Themes.modern,
     'componentStyles': {
       'workspaceBackgroundColour': '##ffffe4',
       'toolboxBackgroundColour': '#fffdd0',
