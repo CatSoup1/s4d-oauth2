@@ -13,7 +13,7 @@ import { disableUnapplicable } from "../restrictions";
 import toolbox from "../toolbox";
 import {Backpack} from '@blockly/workspace-backpack';
 document.querySelector("html").classList.add("light-them");
-var Theme = Blockly.Theme.defineTheme('blueuwu', {
+var theme = Blockly.Theme.defineTheme('blueuwu', {
     'base': Blockly.Themes.Classic,
     'componentStyles': {
       'workspaceBackgroundColour': '#3f4456',
