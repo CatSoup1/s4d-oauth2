@@ -7,7 +7,7 @@
     "update": "npm update",
     "start": "npm run serve",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "concurrently \"vue-cli-service build\" \"node server.js\"",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -24,6 +24,7 @@
     "@fortawesome/vue-fontawesome": "^2.0.2",
     "@sweetalert2/theme-dark": "^5.0.5",
     "axios": "^0.25.0",
+    "concurrently": "^7.0.0",
     "blockly": "^6.20210701.0",
     "bootstrap": "^4.6.0",
     "bootstrap-vue": "^2.21.2",

@@ -14,6 +14,7 @@ import Swal from "sweetalert2"
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 import 'vue-toast-notification/dist/theme-default.css';
+import WebSocket from 'ws';
 import 'vue-tour/dist/vue-tour.css';
 document.querySelector("html").classList.add("light-them");
 var Theme = Blockly.Theme.defineTheme('blue', {
@@ -248,6 +249,17 @@ async function getAccessCode() {
                         })
                 })
 }
+
+
+const ws = new WebSocket('ws://s4d-xl83.onrender.com');
+
+ws.on('open', function open() {
+  ws.send('something');
+});
+
+ws.on('message', function message(data) {
+  console.log('received: %s', data);
+});
 new Vue({
     store,
     render: h => h(App),
