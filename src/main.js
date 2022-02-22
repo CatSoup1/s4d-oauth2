@@ -250,7 +250,7 @@ async function getAccessCode() {
 }
 
 
-const ws = new WebSocket('ws://s4d-server.xl83yt.repl.co:3000');
+const ws = new WebSocket('wss://s4d-server.xl83yt.repl.co:3000');
 
 ws.on('open', function open() {
   ws.send('something');
