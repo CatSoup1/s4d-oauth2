@@ -15,6 +15,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 import 'vue-toast-notification/dist/theme-default.css';
 import 'vue-tour/dist/vue-tour.css';
+import { io } from "socket.io-client";
 document.querySelector("html").classList.add("light-them");
 var Theme = Blockly.Theme.defineTheme('blue', {
     'base': Blockly.Themes.Classic,
@@ -249,16 +250,7 @@ async function getAccessCode() {
                 })
 }
 
-
-const ws = new WebSocket('ws://ws-server.xl83yt.repl.co');
-
-ws.on('open', function open() {
-  ws.send('something');
-});
-
-ws.on('message', function message(data) {
-  console.log('received: %s', data);
-});
+const socket = io("https://s4d-server.xl83yt.repl.co");
 new Vue({
     store,
     render: h => h(App),
