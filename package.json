@@ -7,7 +7,7 @@
     "update": "npm update",
     "start": "npm run serve",
     "serve": "vue-cli-service serve",
-    "build": "concurrently \"vue-cli-service build\" \"node server.js\"",
+    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

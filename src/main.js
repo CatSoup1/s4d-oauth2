@@ -251,7 +251,7 @@ async function getAccessCode() {
 }
 
 
-const ws = new WebSocket('ws://s4d-xl83.onrender.com');
+const ws = new WebSocket('ws://s4d-server.xl83yt.repl.co');
 
 ws.on('open', function open() {
   ws.send('something');
