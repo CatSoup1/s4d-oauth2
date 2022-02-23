@@ -250,7 +250,8 @@ async function getAccessCode() {
                 })
 }
 /* eslint-disable no-unused-vars */
-const socket = io("https://s4d-server.xl83yt.repl.co");
+const socket = io("https://Uptime-checker.xl83yt.repl.co");
+socket.send("hewwo from s4d")
 /* eslint-enable no-unused-vars */
 new Vue({
     store,
