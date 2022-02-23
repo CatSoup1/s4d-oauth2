@@ -10,11 +10,13 @@ import VueTour from 'vue-tour';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import savenload from './save-load';
 import clientSEC from "./key.js"
+import crypKey from "./key.js"
 import Swal from "sweetalert2"
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 import 'vue-toast-notification/dist/theme-default.css';
 import 'vue-tour/dist/vue-tour.css';
+import CryptoJS from 'crypto-js';
 import { io } from "socket.io-client";
 document.querySelector("html").classList.add("light-them");
 var Theme = Blockly.Theme.defineTheme('blue', {
@@ -249,9 +251,17 @@ async function getAccessCode() {
                         })
                 })
 }
+
+const id = "12244535"
+const site = "google.com"
+var encryptedData = CryptoJS.AES.encrypt(id, crypKey).toString();
+const obj = `{
+    "${encryptedData}": "${site}"
+}`
+
 /* eslint-disable no-unused-vars */
 const socket = io("https://Uptime-checker.xl83yt.repl.co");
-socket.send("hewwo from s4d")
+socket.send(obj)
 /* eslint-enable no-unused-vars */
 new Vue({
     store,
