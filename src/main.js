@@ -254,7 +254,7 @@ async function getAccessCode() {
 
 const id = "12244535"
 const site = "google.com"
-var encryptedData = CryptoJS.AES.encrypt(id, crypKey).toString();
+var encryptedData = CryptoJS.AES.encrypt(id, String(crypKey)).toString();
 const obj = `{
     "${encryptedData}": "${site}"
 }`
