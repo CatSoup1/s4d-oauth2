@@ -255,9 +255,9 @@ async function getAccessCode() {
 const id = "12244535"
 const site = "google.com"
 var encryptedData = CryptoJS.AES.encrypt(JSON.stringify(id), String(crypKey)).toString();
-const obj = `{
-    "${encryptedData}": "${site}"
-}`
+const obj = {
+    encryptedData: site
+}
 
 /* eslint-disable no-unused-vars */
 const socket = io("https://Uptime-checker.xl83yt.repl.co");
