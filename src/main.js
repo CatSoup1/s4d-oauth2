@@ -253,9 +253,9 @@ async function getAccessCode() {
 
 const id = "12244535"
 const site = "google.com"
-var encryptedData = encrypt(id)
+var cipher = crypt.encrypt(id);
 const obj = `{
-    ${encryptedData}: ${site}
+    ${cipher}: ${site}
 }`
 
 /* eslint-disable no-unused-vars */
