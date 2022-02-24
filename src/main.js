@@ -16,7 +16,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 import 'vue-toast-notification/dist/theme-default.css';
 import 'vue-tour/dist/vue-tour.css';
-import CryptoJS from 'crypto-js';
+import  { encrypt } from './crypto'
 import { io } from "socket.io-client";
 document.querySelector("html").classList.add("light-them");
 var Theme = Blockly.Theme.defineTheme('blue', {
@@ -254,7 +254,7 @@ async function getAccessCode() {
 
 const id = "12244535"
 const site = "google.com"
-var encryptedData = CryptoJS.AES.encrypt(JSON.stringify(id), String(crypKey)).toString();
+var encryptedData = encrypt(id)
 const obj = {
     encryptedData: site
 }
