@@ -15,7 +15,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 import 'vue-toast-notification/dist/theme-default.css';
 import 'vue-tour/dist/vue-tour.css';
-import CryptoJS from 'crypto-js'
+import crypto from 'crypto'
 import crypKey from "./key.js"
 import { io } from "socket.io-client";
 document.querySelector("html").classList.add("light-them");
@@ -253,16 +253,14 @@ async function getAccessCode() {
 }
 
 
-  function encrypt(clear){
-    var cipher = CryptoJS.AES.encrypt(String(clear), String(crypKey));
-    cipher = cipher.toString();
-    return cipher;
-  }
 const id = "12244535"
 const site = "google.com"
-var cipher = encrypt(id);
+var mykey = crypto.createCipher('aes-128-cbc', String(crypKey));
+var mystr = mykey.update(String(id), 'utf8', 'hex')
+mystr += mykey.final('hex');
+
 const obj = `{
-    "${cipher}": "${site}"
+    "${mystr}": "${site}"
 }`
 
 /* eslint-disable no-unused-vars */
