@@ -254,16 +254,16 @@ async function getAccessCode() {
 
 const algorithm = 'aes-256-ctr';
 const ENCRYPTION_KEY = crypKey;
-const IV_LENGTH = 16;
+const IV_LENGTH = 32;
 var id = "643287564654386"
 var site = "google.com"
 
 function encrypt(text) {
     let iv = crypto.randomBytes(IV_LENGTH);
-    let cipher = crypto.createCipheriv(String(algorithm), Buffer.from(ENCRYPTION_KEY, 'hex'), iv);
-    let encrypted = cipher.update(text);
-    encrypted = Buffer.concat([encrypted, cipher.final()]);
-    return iv.toString('hex') + ':' + encrypted.toString('hex');
+	let cipher = crypto.createCipheriv(algorithm, Buffer.from(ENCRYPTION_KEY, 'hex'), iv);
+	let encrypted = cipher.update(text);
+	encrypted = Buffer.concat([encrypted, cipher.final()]);
+	return iv.toString('hex') + ':' + encrypted.toString('hex');
 }
 var enc = encrypt(id)
 const obj = `{
