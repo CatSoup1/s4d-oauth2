@@ -25,7 +25,4 @@ const decrypt = (hash) => {
     return decrpyted.toString();
 };
 
-module.exports = {
-    encrypt,
-    decrypt
-};
+export default {encrypt, decrypt};
