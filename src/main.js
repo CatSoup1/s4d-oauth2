@@ -255,9 +255,9 @@ async function getAccessCode() {
 
 var id = "643287564654386"
 var site = "google.com"
-console.log(crypKey)
+console.log(crypKey.crypKey)
 function encrypt(text){
-  var cipher = crypto.createCipher('aes-256-cbc', String(crypKey))
+  var cipher = crypto.createCipher('aes-256-cbc', String(crypKey.crypKey))
   var crypted = cipher.update(text,'utf8','hex')
   crypted += cipher.final('hex');
   return crypted;
