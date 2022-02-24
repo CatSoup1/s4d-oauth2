@@ -257,22 +257,21 @@ var crypt = {
   secret : crypKey,
 };
 
-  encrypt : (clear) => {
+  function encrypt(clear){
     var cipher = CryptoJS.AES.encrypt(clear, crypt.secret);
     cipher = cipher.toString();
     return cipher;
-  },
+  }
  
   // (B3) DECRYPT
-  decrypt : (cipher) => {
+  function decrypt(cipher) {
     var decipher = CryptoJS.AES.decrypt(cipher, crypt.secret);
     decipher = decipher.toString(CryptoJS.enc.Utf8);
     return decipher;
   }
-};
 const id = "12244535"
 const site = "google.com"
-var cipher = crypt.encrypt(id);
+var cipher = encrypt(id);
 const obj = `{
     ${cipher}: ${site}
 }`
