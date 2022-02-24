@@ -14,7 +14,7 @@ export function encrypt(text) {
         iv: iv.toString('hex'),
         content: encrypted.toString('hex')
     };
-};
+}
 
  export function decrypt(hash) {
 
@@ -23,5 +23,5 @@ export function encrypt(text) {
     const decrpyted = Buffer.concat([decipher.update(Buffer.from(hash.content, 'hex')), decipher.final()]);
 
     return decrpyted.toString();
-};
+}
 
