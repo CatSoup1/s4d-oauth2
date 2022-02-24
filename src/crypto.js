@@ -2,7 +2,7 @@ import crypto from 'crypto'
 import crypKey from "./key.js"
 const algorithm = 'aes-256-ctr';
 const secretKey = crypKey;
-const iv = crypto.randomBytes(16);
+const iv = crypto.randomBytes(32);
 
 export function encrypt(text) {
 
