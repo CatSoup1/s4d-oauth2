@@ -1,27 +1,21 @@
-import crypto from 'crypto'
+import CryptoJS from 'crypto-js'
 import crypKey from "./key.js"
 const algorithm = 'aes-192-cbc';
-const secretKey = crypKey;
-const iv = crypto.randomBytes(24);
 
-export function encrypt(text) {
+var crypt = {
+  secret : crypKey,
+};
 
-    const cipher = crypto.createCipheriv(algorithm, secretKey, iv);
+function encrypt(clear) {
+    var cipher = CryptoJS.AES.encrypt(clear, crypt.secret);
+    cipher = cipher.toString();
+    return cipher;
+  };
+ 
+function decrypt(cipher){
+    var decipher = CryptoJS.AES.decrypt(cipher, crypt.secret);
+    decipher = decipher.toString(CryptoJS.enc.Utf8);
+    return decipher;
+  };
 
-    const encrypted = Buffer.concat([cipher.update(text), cipher.final()]);
-
-    return {
-        iv: iv.toString('hex'),
-        content: encrypted.toString('hex')
-    };
-}
-
- export function decrypt(hash) {
-
-    const decipher = crypto.createDecipheriv(algorithm, secretKey, Buffer.from(hash.iv, 'hex'));
-
-    const decrpyted = Buffer.concat([decipher.update(Buffer.from(hash.content, 'hex')), decipher.final()]);
-
-    return decrpyted.toString();
-}
 
