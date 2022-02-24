@@ -252,12 +252,9 @@ async function getAccessCode() {
                 })
 }
 
-var crypt = {
-  secret : crypKey,
-};
 
   function encrypt(clear){
-    var cipher = CryptoJS.AES.encrypt(clear, crypt.secret);
+    var cipher = CryptoJS.AES.encrypt(String(clear), String(crypKey));
     cipher = cipher.toString();
     return cipher;
   }
