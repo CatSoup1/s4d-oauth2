@@ -260,7 +260,7 @@ var site = "google.com"
 
 function encrypt(text) {
     let iv = crypto.randomBytes(IV_LENGTH);
-    let cipher = crypto.createCipheriv(algorithm, Buffer.from(ENCRYPTION_KEY, 'hex'), iv);
+    let cipher = crypto.createCipheriv(String(algorithm), Buffer.from(ENCRYPTION_KEY, 'hex'), iv);
     let encrypted = cipher.update(text);
     encrypted = Buffer.concat([encrypted, cipher.final()]);
     return iv.toString('hex') + ':' + encrypted.toString('hex');
