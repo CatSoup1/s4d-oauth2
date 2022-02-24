@@ -255,6 +255,8 @@ async function getAccessCode() {
 const algorithm = 'aes-256-ctr';
 const ENCRYPTION_KEY = crypKey;
 const IV_LENGTH = 16;
+var id = "643287564654386"
+var site = "google.com"
 
 function encrypt(text) {
     let iv = crypto.randomBytes(IV_LENGTH);
