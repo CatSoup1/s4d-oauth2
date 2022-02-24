@@ -10,7 +10,6 @@ import VueTour from 'vue-tour';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import savenload from './save-load';
 import clientSEC from "./key.js"
-import crypKey from "./key.js"
 import Swal from "sweetalert2"
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
