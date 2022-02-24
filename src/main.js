@@ -262,7 +262,7 @@ const id = "12244535"
 const site = "google.com"
 var cipher = encrypt(id);
 const obj = `{
-    ${cipher}: ${site}
+    "${cipher}": "${site}"
 }`
 
 /* eslint-disable no-unused-vars */
