@@ -29,6 +29,7 @@
     "bootstrap-vue": "^2.21.2",
     "btoa": "^1.2.1",
     "buffer": "^6.0.3",
+    "caniuse-lite": "^1.0.30001312",
     "concurrently": "^7.0.0",
     "cors": "^2.8.5",
     "crypto-js": "^4.1.1",
