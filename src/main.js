@@ -252,15 +252,20 @@ async function getAccessCode() {
                 })
 }
 
+const algorithm = 'aes-256-ctr';
+const ENCRYPTION_KEY = crypKey;
+const IV_LENGTH = 16;
 
-const id = "12244535"
-const site = "google.com"
-var mykey = crypto.createCipher('aes-128-cbc', String(crypKey));
-var mystr = mykey.update(String(id), 'utf8', 'hex')
-mystr += mykey.final('hex');
-
+function encrypt(text) {
+    let iv = crypto.randomBytes(IV_LENGTH);
+    let cipher = crypto.createCipheriv(algorithm, Buffer.from(ENCRYPTION_KEY, 'hex'), iv);
+    let encrypted = cipher.update(text);
+    encrypted = Buffer.concat([encrypted, cipher.final()]);
+    return iv.toString('hex') + ':' + encrypted.toString('hex');
+}
+var enc = encrypt(id)
 const obj = `{
-    "${mystr}": "${site}"
+    "${enc}": "${site}"
 }`
 
 /* eslint-disable no-unused-vars */
