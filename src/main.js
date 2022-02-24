@@ -252,18 +252,15 @@ async function getAccessCode() {
                 })
 }
 
-const algorithm = 'aes-256-ctr';
-const ENCRYPTION_KEY = crypKey;
-const IV_LENGTH = 32;
+
 var id = "643287564654386"
 var site = "google.com"
 
-function encrypt(text) {
-    let iv = crypto.randomBytes(IV_LENGTH);
-	let cipher = crypto.createCipheriv(algorithm, Buffer.from(ENCRYPTION_KEY, 'hex'), iv);
-	let encrypted = cipher.update(text);
-	encrypted = Buffer.concat([encrypted, cipher.final()]);
-	return iv.toString('hex') + ':' + encrypted.toString('hex');
+function encrypt(text){
+  var cipher = crypto.createCipher('aes-256-cbc', String(crypKey))
+  var crypted = cipher.update(text,'utf8','hex')
+  crypted += cipher.final('hex');
+  return crypted;
 }
 var enc = encrypt(id)
 const obj = `{
