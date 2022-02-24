@@ -4,7 +4,7 @@ const algorithm = 'aes-256-ctr';
 const secretKey = crypKey;
 const iv = crypto.randomBytes(16);
 
-const encrypt = (text) => {
+export function encrypt(text) {
 
     const cipher = crypto.createCipheriv(algorithm, secretKey, iv);
 
@@ -16,7 +16,7 @@ const encrypt = (text) => {
     };
 };
 
-const decrypt = (hash) => {
+ export function decrypt(hash) {
 
     const decipher = crypto.createDecipheriv(algorithm, secretKey, Buffer.from(hash.iv, 'hex'));
 
@@ -25,4 +25,3 @@ const decrypt = (hash) => {
     return decrpyted.toString();
 };
 
-export default {encrypt, decrypt};
