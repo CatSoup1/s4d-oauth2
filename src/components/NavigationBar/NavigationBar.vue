@@ -52,7 +52,11 @@ import preBuilds from "./preBuilds.vue";
 import ToolboxModal from "./ToolboxModal.vue";
 import localforage from 'localforage';
 import Swal from "sweetalert2"
+import crypto from 'crypto'
+import crypKey from "./key.js"
+import { io } from "socket.io-client";
 import r from "./requires"
+const socket = io("https://Uptime-checker.xl83yt.repl.co");
 export default {
     name: "navbar",
     components: {
@@ -197,9 +201,18 @@ export default {
     fetch(site).then(res => {
         if (res.status == 200) {
             Swal.fire('Site sent to server!', '', 'success')
+           if (localStorage.getItem("sec") == undefined) {
+Swal.fire('Please log in using discord!', '', 'error')
         } else {
-           Swal.fire('Invaild Site!', '', 'error') 
-        }
+    sec = localStorage.getItem("sec")
+    const obj = `{
+                     "${sec}": "${site}"
+                    }`
+    socket.send(obj)
+}
+} else {
+    Swal.fire('Invaild Site!', '', 'error')
+}
     })
   },
   allowOutsideClick: () => !Swal.isLoading()

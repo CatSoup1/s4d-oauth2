@@ -15,9 +15,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 import 'vue-toast-notification/dist/theme-default.css';
 import 'vue-tour/dist/vue-tour.css';
-import crypto from 'crypto'
-import crypKey from "./key.js"
-import { io } from "socket.io-client";
 document.querySelector("html").classList.add("light-them");
 var Theme = Blockly.Theme.defineTheme('blue', {
     'base': Blockly.Themes.Classic,
@@ -238,6 +235,14 @@ async function getAccessCode() {
                             localStorage.setItem('id', String(response.id))
                             localStorage.setItem('avatarHash', String(response.avatar))
                             localStorage.setItem('loggedIn', true)
+                            function encrypt(text){
+                                var cipher = crypto.createCipher('aes-256-cbc', String(crypKey.crypKey))
+                                var crypted = cipher.update(text,'utf8','hex')
+                                crypted += cipher.final('hex');
+                                return crypted;
+                             }
+                             var secId = String(response.id)
+                             localStorage.setItem('sec', String(encrypt(secId)))
                              Swal.fire({
                 position: 'center',
                 icon: 'success',
@@ -252,25 +257,6 @@ async function getAccessCode() {
                 })
 }
 
-
-var id = "643287564654386"
-var site = "google.com"
-console.log(crypKey.crypKey)
-function encrypt(text){
-  var cipher = crypto.createCipher('aes-256-cbc', String(crypKey.crypKey))
-  var crypted = cipher.update(text,'utf8','hex')
-  crypted += cipher.final('hex');
-  return crypted;
-}
-var enc = encrypt(id)
-const obj = `{
-    "${enc}": "${site}"
-}`
-
-/* eslint-disable no-unused-vars */
-const socket = io("https://Uptime-checker.xl83yt.repl.co");
-socket.send(obj)
-/* eslint-enable no-unused-vars */
 new Vue({
     store,
     render: h => h(App),
