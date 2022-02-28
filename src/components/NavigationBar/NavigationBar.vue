@@ -17,7 +17,8 @@
                 <ExamplesMenu></ExamplesMenu>
                 <preBuilds></preBuilds>
                 <TokenModal></TokenModal>
-                <b-nav-item href="https://androz2091.gitbook.io/scratch-for-discord/" target="_blank">{{ $t('help') }}</b-nav-item> 
+                <b-nav-item href="https://androz2091.gitbook.io/scratch-for-discord/" target="_blank">{{ $t('help') }}</b-nav-item>
+                <b-button id="pinger" style="color: white; margin-right: 10px; margin-top: auto; margin-bottom: auto;" @click="ping()">Ping your site</b-button>
             </b-navbar-nav>
             <b-navbar-nav style="margin-top: auto; margin-bottom: auto;" class="ml-auto">
                     <b-button id="loggedInData" style="color: white; margin-right: 10px; margin-top: auto; margin-bottom: auto;"><img id="discordPfp" src=" " style=""/>Currently not logged in</b-button>
@@ -180,6 +181,28 @@ export default {
       'success'
     )
   }
+})
+    },
+    ping() {
+        Swal.fire({
+  title: 'Submit your site',
+  input: 'text',
+  inputAttributes: {
+    autocapitalize: 'off'
+  },
+  showCancelButton: true,
+  confirmButtonText: 'Start pinging',
+  showLoaderOnConfirm: true,
+  preConfirm: (site) => {
+    fetch(site).then(res => {
+        if (res.status == 200) {
+            Swal.fire('Site sent to server!', '', 'success')
+        } else {
+           Swal.fire('Invaild Site!', '', 'error') 
+        }
+    })
+  },
+  allowOutsideClick: () => !Swal.isLoading()
 })
     }
     },
